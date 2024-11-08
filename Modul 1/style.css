@@ -1,0 +1,62 @@
+/* Style CSS Internal untuk Biodata  */
+
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5%;
+  }
+
+  .info {
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0 0 0 20px;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+
+  /* Style CSS untuk Table */
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

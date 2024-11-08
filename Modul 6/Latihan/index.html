@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran dengan Navbar dan Tabel Menarik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="nav-button active" data-tab="formTab">Formulir Pendaftaran</button>
+        <button class="nav-button" data-tab="tableTab">Data Pendaftar</button>
+    </nav>
+
+    <!-- Form Section -->
+    <div id="formTab" class="tab-content active">
+        <div class="container">
+            <h2>Formulir Pendaftaran</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name">
+                    <span class="error-message" id="nameError">Nama tidak boleh kosong!</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error-message" id="emailError">Email tidak boleh kosong!</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="no_telp">Nomor Telepon:</label>
+                    <input type="text" id="no_telp" name="no_telp">
+                    <span class="error-message" id="telpError">Nomor telepon tidak boleh kosong!</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat:</label>
+                    <input type="text" id="alamat" name="alamat">
+                    <span class="error-message" id="alamatError">Alamat tidak boleh kosong!</span>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div id="tableTab" class="tab-content">
+        <div class="container">
+            <h2>Data Pendaftar</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Nomor Telepon</th>
+                        <th>Alamat</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <!-- Data akan ditambahkan di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
