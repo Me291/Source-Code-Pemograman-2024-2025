@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 style="text-align: center;">Form Mahasiswa</h2>
+        <form id="myForm" action="Modul2/Home.html">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Masukkan Nama Anda">
+            </div>
+            <div class="mb-3">
+                <label for="nim" class="form-label">NIM</label>
+                <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM Anda">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="user@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Pesan</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your message here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("myForm").onsubmit = function(event) {
+            event.preventDefault(); 
+            
+            if (!validateName()) return false;
+            if (!validateNIM()) return false;
+            if (!validateEmail()) return false;
+            if (!validateMessage()) return false;
+            
+            alert("Form berhasil di-submit!");
+            window.location.href = "../Modul2/home.html";
+            return true;
+        };
+
+        function validateName() {
+            const name = document.getElementById("name").value;
+            const namePattern = /^[A-Za-z\s]{3,}$/;
+            if (name === "") {
+                alert("Nama Lengkap tidak boleh kosong");
+                return false;
+            } else if (name.length < 3) {
+                alert("Nama Lengkap minimal 3 huruf");
+                return false;
+            } else if (!namePattern.test(name)) {
+                alert("Nama Lengkap hanya boleh berisi huruf");
+                return false;
+            }
+            return true;
+        }
+
+        function validateNIM() {
+            const nim = document.getElementById("nim").value;
+            const nimPattern = /^\d{12}$/;
+            if (nim === "") {
+                alert("NIM tidak boleh kosong");
+                return false;
+            } else if (!nimPattern.test(nim)) {
+                alert("NIM harus terdiri dari 12 angka");
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                alert("Email tidak boleh kosong");
+                return false;
+            } else if (!emailPattern.test(email)) {
+                alert("Format email salah (contoh: user@example.com)");
+                return false;
+            }
+            return true;
+        }
+
+        function validateMessage() {
+            const message = document.getElementById("message").value;
+            if (message.length > 200) {
+                alert("Pesan tidak boleh lebih dari 200 karakter");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
